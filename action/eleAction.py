@@ -58,6 +58,18 @@ def input_content(ele_type,ele_vaule,values,*args):
     except Exception as e:
         print(e)
 
+def refresh():
+    try:
+        driver.refresh()
+    except Exception as e:
+        print(e)
+
+def clear(ele_type,ele_vaule,*args):
+    try:
+        find_element(driver,ele_type,ele_vaule).clear()
+    except Exception as e:
+        print(e)
+
 def click(ele_type,ele_vaule,*args):
     try:
         find_element(driver, ele_type, ele_vaule).click()

@@ -1,0 +1,30 @@
+2021-05-11 11:58:26.116 | ERROR    | utils.logg:error:39 - 第10行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 124, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2021-05-11 11:59:19.702 | ERROR    | utils.logg:error:39 - 第12行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 124, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2021-05-11 15:23:15.969 | ERROR    | utils.logg:error:39 - 第21行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 136, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2021-05-11 15:30:23.042 | ERROR    | utils.logg:error:39 - 第21行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 136, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2021-05-11 15:33:14.352 | ERROR    | utils.logg:error:39 - 第21行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 136, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+
