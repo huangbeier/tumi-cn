@@ -50,13 +50,14 @@ class SendMail:
         data=ex.get_all_dic_data()
         datas=''
         for i in range(2,len(data)+2):
-            datas+=f'''
-                        <tr>   
-                            <th>{data[i]['序号']}</th>
-                            <th>{data[i]['用例名称']}</th>
-                            <th>{data[i]['执行结果']}</th>
-                        </tr>
-                    '''
+            if data[i]['序号'] != 'null':
+                datas+=f'''
+                            <tr>   
+                                <th>{data[i]['序号']}</th>
+                                <th>{data[i]['用例名称']}</th>
+                                <th>{data[i]['执行结果']}</th>
+                            </tr>
+                        '''
 
         content = f"""
             <html>
@@ -128,11 +129,12 @@ if __name__ == '__main__':
 
     #发送附件邮件
     mail = SendMail('smtp.163.com')
-    send_address = "beier0917@163.com"
-    send_password = auth_code
-    receive_address = ['953564459@qq.com','2482821110@qq.com']
-    title = "测试报告"
-    content = "测试报告在附件中"
-    attachfilepath = reportpath
-    mail.send_mail(send_address, send_password, receive_address, title, content, file=attachfilepath)
+    print(mail.get_content())
+    # send_address = "beier0917@163.com"
+    # send_password = auth_code
+    # receive_address = ['953564459@qq.com','2482821110@qq.com']
+    # title = "测试报告"
+    # content = "测试报告在附件中"
+    # attachfilepath = reportpath
+    # mail.send_mail(send_address, send_password, receive_address, title, content, file=attachfilepath)
 

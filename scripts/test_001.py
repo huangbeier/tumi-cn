@@ -72,7 +72,8 @@ def test_run():
         content = mail.get_content()
         #mail.send_mail(send_address, send_password, receive_address, title, content)
     except Exception as e:
-        print(e)
+        raise e
+        #print(e)
 
 
 if __name__ == '__main__':
