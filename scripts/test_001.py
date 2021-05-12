@@ -18,7 +18,7 @@ def test_run():
         mail = SendMail('smtp.163.com')
         send_address = "beier0917@163.com"
         send_password = auth_code
-        receive_address = ['953564459@qq.com']
+        receive_address = ['953564459@qq.com','beier.huang@tuogo.com.cn']
         title = "测试报告"
         for i in range(2,row_nums+1):
 
