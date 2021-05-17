@@ -123,6 +123,7 @@ def assert_b_pagesource(row,values,*args):
 
 def assert_b_url(row,values,*args):
     try:
+        print(driver.current_url)
         assert values in driver.current_url
         if ex.get_specific_data(row, 6) != 'fail':
             ex.write_specific_data(row, 6, 'pass')
@@ -133,6 +134,7 @@ def assert_b_url(row,values,*args):
 
 def assert_ele(row,ele_type,ele_vaule,values,*args):
     try:
+        #print(find_element(driver,ele_type,ele_vaule).text)
         assert values == find_element(driver,ele_type,ele_vaule).text
         if ex.get_specific_data(row, 6) != 'fail':
             ex.write_specific_data(row, 6, 'pass')
