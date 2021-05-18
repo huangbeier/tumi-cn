@@ -10,11 +10,10 @@ elementLocationPath = os.path.join(parentDirPath, u'config\config.ini')
 
 Chromepath=os.path.join(parentDirPath, u'chromedriver.exe')
 
-test_url=r'https://stage.tumi.cn/'
 #NBBKZIBDBVDTURJG    TG笔记本
 auth_code = 'LXHRNCHDCWUYAQGG'#邮箱授权码
-excelpath=os.path.join(parentDirPath, u'data\\TUMI_CN.xlsx')
-excelpath2=os.path.join(parentDirPath, u'data\\t_02.xlsx')
+cn_excelpath=os.path.join(parentDirPath, u'data\\TUMI_CN.xlsx')
+hk_excelpath=os.path.join(parentDirPath, u'data\\TUMI_HK.xlsx')
 reportpath=os.path.join(parentDirPath, u'report\\{}Test_report.html'.format(time.strftime('%Y-%m-%d')))
 logpath=os.path.join(parentDirPath, u'config\\log')
 
@@ -23,6 +22,6 @@ if __name__ == '__main__':
     print(Chromepath)
     print(elementLocationPath)
     print(parentDirPath)
-    print(excelpath)
+    print(hk_excelpath)
     print(reportpath)
     print(logpath)

@@ -1,14 +1,14 @@
 # @Author ：黄贝尔
 # @Time ：2021/5/7__14:08
 # #coding:utf-8
-from config.config import excelpath, auth_code, reportpath
+from config.config import cn_excelpath, auth_code
 from action.eleAction import *
 from utils.send_mail import SendMail
 from utils.exceltools import Excel_tools
 from utils.logg import Loggings
 log=Loggings()
 ex=Excel_tools()
-ex.read_work_book(excelpath)
+ex.read_work_book(cn_excelpath)
 
 
 def test_run():

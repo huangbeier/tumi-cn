@@ -1,0 +1,51 @@
+2021-05-18 13:57:46.606 | ERROR    | utils.logg:error:39 - 第53行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 134, in assert_b_url
+    print(driver.current_url)
+  File "C:\Users\huang\AppData\Local\Programs\Python\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 669, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\huang\AppData\Local\Programs\Python\Python38\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\huang\AppData\Local\Programs\Python\Python38\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=89.0.4389.90)
+
+
+2021-05-18 14:17:09.720 | ERROR    | utils.logg:error:39 - 第54行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 89, in assert_b_title
+    assert values in driver.title
+AssertionError
+
+2021-05-18 14:19:20.109 | ERROR    | utils.logg:error:39 - 第54行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 89, in assert_b_title
+    assert values in driver.title
+AssertionError
+
+2021-05-18 14:35:42.032 | ERROR    | utils.logg:error:39 - 第55行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 152, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AssertionError
+
+2021-05-18 14:55:24.073 | ERROR    | utils.logg:error:39 - 第53行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 152, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+
+2021-05-18 14:55:47.505 | ERROR    | utils.logg:error:39 - 第54行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 89, in assert_b_title
+    assert values in driver.title
+AssertionError
+
+2021-05-18 14:56:31.877 | ERROR    | utils.logg:error:39 - 第55行用例断言错误
+Traceback (most recent call last):
+  File "C:\huang111\tumi-cn\action\eleAction.py", line 152, in assert_ele
+    assert values == find_element(driver,ele_type,ele_vaule).text
+AttributeError: 'NoneType' object has no attribute 'text'
+

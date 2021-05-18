@@ -31,11 +31,19 @@ def get_url(url,*args):
     except Exception as e:
         print(e)
 
-def action(ele_type,ele_vaule,*args):
+def move_click(ele_type,ele_vaule,*args):
     try:
-        ActionChains(driver).move_to_element(find_element(driver,ele_type,ele_vaule)).perform()  # 鼠标悬停到XX元素
+        a=find_element(driver,ele_type,ele_vaule)
+        ActionChains(driver).move_to_element(a).click().perform()  # 鼠标悬停到XX元素并且点击
     except Exception as e:
         print(e)
+
+def move(ele_type,ele_vaule,*args):
+    try:
+        ActionChains(driver).move_to_element(find_element(driver, ele_type, ele_vaule)).perform()  # 鼠标悬停到XX元素
+    except Exception as e:
+        print(e)
+
 def max_window():
     try:
         driver.maximize_window()
@@ -102,6 +110,12 @@ def switch_default(*args):
 def switch_to_window(*args):
     try:
         driver.switch_to_window(driver.window_handles[-1])
+    except Exception as e:
+        print(e)
+
+def switch_tos_window(*args):
+    try:
+        driver.switch_to_window(driver.window_handles[-2])
     except Exception as e:
         print(e)
 
