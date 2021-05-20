@@ -12,8 +12,8 @@ Chromepath=os.path.join(parentDirPath, u'chromedriver.exe')
 
 #NBBKZIBDBVDTURJG    TG笔记本
 auth_code = 'LXHRNCHDCWUYAQGG'#邮箱授权码
-cn_excelpath=os.path.join(parentDirPath, u'data\\TUMI_CN.xlsx')
-hk_excelpath=os.path.join(parentDirPath, u'data\\TUMI_HK.xlsx')
+#excelpath=os.path.join(parentDirPath, u'data\\TUMI_CN.xlsx')
+excelpath=os.path.join(parentDirPath, u'data\\TUMI_HK.xlsx')
 reportpath=os.path.join(parentDirPath, u'report\\{}Test_report.html'.format(time.strftime('%Y-%m-%d')))
 logpath=os.path.join(parentDirPath, u'config\\log')
 
