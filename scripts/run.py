@@ -21,7 +21,7 @@ def test_run():
         receive_address = ['953564459@qq.com','beier.huang@tuogo.com.cn']
         title = "测试报告"
         for i in range(2,row_nums+1):
-
+            #不要动,EXCEL模板格式也别动
             ex.read_work_sheet('测试用例')
             info=ex.get_specific_data(i,5)
             if info=='y':
@@ -37,8 +37,9 @@ def test_run():
                     case_ele_type=case[3]
                     case_ele_value=case[4]
                     case_value=case[5]
-
                     expression=''
+
+                    #根据需求拼接表达式
                     if 'assert_b_' in case_keyword:
                         expression=case_keyword+'('+str(i)+',"'+case_value+'")'
                         print(expression)
