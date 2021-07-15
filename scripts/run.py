@@ -14,11 +14,13 @@ ex.read_work_book(excelpath)
 def test_run():
     try:
         ex.read_work_sheet('测试用例')
+        #不需要发的测试结果在表格内将序号注释
         row_nums=ex.get_max_rows()
         mail = SendMail('smtp.163.com')
         send_address = "beier0917@163.com"
         send_password = auth_code
-        receive_address = ['sai.song@tuogo.com.cn','beier.huang@tuogo.com.cn','jiale.chen@tuogo.com.cn','yi.zhang@tuogo.com.cn','feng.wang@tuogo.com.cn','hz.liu@tuogo.com.cn','cerci.zhang@tuogo.com.cn']
+        #receive_address = ['sai.song@tuogo.com.cn','beier.huang@tuogo.com.cn','jiale.chen@tuogo.com.cn','yi.zhang@tuogo.com.cn','feng.wang@tuogo.com.cn','hz.liu@tuogo.com.cn','cerci.zhang@tuogo.com.cn']
+        receive_address = ['beier.huang@tuogo.com.cn']
         title = "测试报告"
         for i in range(2,row_nums+1):
             #不要动,EXCEL模板格式也别动
@@ -28,6 +30,7 @@ def test_run():
                 case_step_page=ex.get_specific_data(i,4)
                 ex.read_work_sheet(case_step_page)
                 step_nums=ex.get_max_rows()
+                log.debug(f'执行{case_step_page}用例')
                 for j in range(2, step_nums + 1):
 
                     case =ex.get_row_data(j)

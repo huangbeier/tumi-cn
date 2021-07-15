@@ -22,6 +22,5 @@ if __name__ == '__main__':
     print(Chromepath)
     print(elementLocationPath)
     print(parentDirPath)
-    print(hk_excelpath)
     print(reportpath)
     print(logpath)
