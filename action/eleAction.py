@@ -23,12 +23,14 @@ def open_browser(driver_name,*args):
     if driver_name.lower()=='chrome':
         driver=webdriver.Chrome(Chromepath)
     else:
+        log.error('找不到浏览器驱动\r\n' + traceback.format_exc())
         print('找不到浏览器驱动')
 
 def get_url(url,*args):
     try:
         driver.get(url)
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def move_click(ele_type,ele_vaule,*args):
@@ -36,18 +38,21 @@ def move_click(ele_type,ele_vaule,*args):
         a=find_element(driver,ele_type,ele_vaule)
         ActionChains(driver).move_to_element(a).click().perform()  # 鼠标悬停到XX元素并且点击
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def action(ele_type,ele_vaule,*args):
     try:
         ActionChains(driver).move_to_element(find_element(driver, ele_type, ele_vaule)).perform()  # 鼠标悬停到XX元素
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def max_window():
     try:
         driver.maximize_window()
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def sleep(seconds,*args):
@@ -58,30 +63,35 @@ def switch_frame(ele_type,ele_vaule,*args):
         i_frame=find_element(driver,ele_type,ele_vaule)
         driver.switch_to.frame(i_frame)
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def input_content(ele_type,ele_vaule,values,*args):
     try:
         find_element(driver, ele_type, ele_vaule).send_keys(values)
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def refresh():
     try:
         driver.refresh()
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def clear(ele_type,ele_vaule,*args):
     try:
         find_element(driver,ele_type,ele_vaule).clear()
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def click(ele_type,ele_vaule,*args):
     try:
         find_element(driver, ele_type, ele_vaule).click()
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def assert_b_title(row,values,*args):
@@ -99,30 +109,35 @@ def input_subject(ele_type,ele_vaule,values,*args):
         a,b=ele_vaule.split(',')
         find_elements(driver,ele_type,a)[int(b)].send_keys(values)
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def switch_default(*args):
     try:
         driver.switch_to.default_content()
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def switch_to_window(*args):
     try:
         driver.switch_to_window(driver.window_handles[-1])
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def switch_tos_window(*args):
     try:
         driver.switch_to_window(driver.window_handles[-2])
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def switch_to_default_window(*args):
     try:
         driver.switch_to_window(driver.window_handles[0])
     except Exception as e:
+        log.error(traceback.format_exc())
         print(e)
 
 def assert_b_pagesource(row,values,*args):

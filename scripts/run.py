@@ -18,7 +18,7 @@ def test_run():
         mail = SendMail('smtp.163.com')
         send_address = "beier0917@163.com"
         send_password = auth_code
-        receive_address = ['953564459@qq.com','beier.huang@tuogo.com.cn']
+        receive_address = ['sai.song@tuogo.com.cn','beier.huang@tuogo.com.cn','jiale.chen@tuogo.com.cn','yi.zhang@tuogo.com.cn','feng.wang@tuogo.com.cn','hz.liu@tuogo.com.cn','cerci.zhang@tuogo.com.cn']
         title = "测试报告"
         for i in range(2,row_nums+1):
             #不要动,EXCEL模板格式也别动
@@ -42,7 +42,7 @@ def test_run():
                     #根据需求拼接表达式
                     if 'assert_b_' in case_keyword:
                         expression=case_keyword+'('+str(i)+',"'+case_value+'")'
-                        print(expression)
+                        log.info(expression)
                     elif 'assert_ele' in case_keyword:
                         if isinstance(case_value,int):
                             expression = case_keyword + '("' + str(i)+'","'+ case_ele_type + '","' + case_ele_value + "',"+str(case_value)+")"
@@ -52,31 +52,33 @@ def test_run():
                             expression = case_keyword +'(' + str(i)+',"' + case_ele_type + '","' + case_ele_value + '",'+'"' + case_value + '")'
                         else:
                             expression = case_keyword + '(' + str(i) + ',"' + case_ele_type + '","' + case_ele_value + '",' + "'" + case_value + "')"
-                        print(expression)
+                        log.info(expression)
                     elif case_ele_type is None and case_ele_value is None and case_value:
                         if isinstance(case_value,int):
                             expression=case_keyword+'('+str(case_value)+')'
                         else:
                             expression = case_keyword + '("' + case_value + '")'
-                        print(expression)
+                        log.info(expression)
                     elif case_ele_type is None and case_ele_value is None and case_value is None:
                         expression=case_keyword+'()'
-                        print(expression)
+                        log.info(expression)
                     elif case_ele_type and case_ele_value and case_value is None:
                         expression=case_keyword+'("'+case_ele_type+'","'+case_ele_value+'")'
-                        print(expression)
+                        log.info(expression)
                     elif case_ele_type and case_ele_value and case_value :
                         if isinstance(case_value, int):
                             expression = case_keyword + '("' + case_ele_type + '","' + case_ele_value + '",'+str(case_value)+')'
                         else:
                             expression = case_keyword + '("' + case_ele_type + '","' + case_ele_value + '","' + case_value + '")'
-                        print(expression)
-
-                    eval(expression)
+                        log.info(expression)
+                    try:
+                        eval(expression)
+                    except Exception as  e:
+                        log.error(e)
 
         content = mail.get_content()
         #需要发送邮件的话解除注释
-        #mail.send_mail(send_address, send_password, receive_address, title, content)
+        mail.send_mail(send_address, send_password, receive_address, title, content)
     except Exception as e:
         #raise e
         print(e)
