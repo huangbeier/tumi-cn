@@ -9,6 +9,14 @@ def find_element(driver, find_type, expression):
     :param find_type:
     :param expression:
     :return:
+    格式：
+                    - ("id", "username")
+                    - ("name", "username")
+                    - ("class name", "username")
+                    - ("xpath", "username")
+                    - ("css selector", "username")
+                    - ("link text", "username")
+                    - ("partial link text", "username")
     '''
     # element = driver.find_element(by=find_type, value=expression)
     # return element
