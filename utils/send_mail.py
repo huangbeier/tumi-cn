@@ -115,8 +115,8 @@ class SendMail:
 
 
 if __name__ == '__main__':
-#     from config.VarConfig import auth_code
-    # #发送自制测试报告
+    #from config.VarConfig import auth_code
+    #发送自制测试报告
     # mail = SendMail('smtp.163.com')
     # data=get_content()
     # sender = 'beier0917@163.com'
@@ -125,11 +125,27 @@ if __name__ == '__main__':
     # content = data
     # auth_code = auth_code
     # mail.send(title, content,sender,auth_code, receivers)
-    #print(get_content())
+    # print(get_content())
+
+    from config.config import auth_code, excelpath
+    from utils.exceltools import Excel_tools
+    ex = Excel_tools()
+    # 在这里替换需要读取的表格路径，替换完毕后直接执行此方法,去config文件里面中修改excelpath的值
+    ex.read_work_book(excelpath)
+    ex.read_work_sheet('测试用例')
+    mail = SendMail('smtp.163.com')
+    send_address = "beier0917@163.com"
+    send_password = auth_code
+    # receive_address = ['sai.song@tuogo.com.cn','beier.huang@tuogo.com.cn','jiale.chen@tuogo.com.cn','yi.zhang@tuogo.com.cn','feng.wang@tuogo.com.cn','hz.liu@tuogo.com.cn','cerci.zhang@tuogo.com.cn']
+    receive_address = ['beier.huang@tuogo.com.cn']
+    title = "测试报告"
+    content = mail.get_content()
+    # 需要发送邮件的话解除注释
+    mail.send_mail(send_address, send_password, receive_address, title, content)
 
     #发送附件邮件
-    mail = SendMail('smtp.163.com')
-    print(mail.get_content())
+    # mail = SendMail('smtp.163.com')
+    # print(mail.get_content())
     # send_address = "beier0917@163.com"
     # send_password = auth_code
     # receive_address = ['953564459@qq.com','2482821110@qq.com']
