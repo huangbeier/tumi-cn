@@ -10,15 +10,16 @@ log=Loggings()
 ex=Excel_tools()
 #在这里替换需要读取的表格路径，替换完毕后直接执行此方法,去config文件里面中修改excelpath的值
 ex.read_work_book(excelpath)
-
+#写好excel内的用例直接此页面执行run方法就可以跑了
 def test_run():
     try:
         ex.read_work_sheet('测试用例')
         #不需要发的测试结果在表格内将序号注释
         row_nums=ex.get_max_rows()
-        mail = SendMail('smtp.163.com')
-        send_address = "beier0917@163.com"
-        send_password = auth_code
+        mail = SendMail('smtp.163.com')#163邮箱的服务，不同的邮箱替换不同的服务
+        send_address = "beier0917@163.com"#发件原地址
+        send_password = auth_code#发件地址邮箱授权码
+        #下方是收件人
         #receive_address = ['sai.song@tuogo.com.cn','beier.huang@tuogo.com.cn','jiale.chen@tuogo.com.cn','yi.zhang@tuogo.com.cn','feng.wang@tuogo.com.cn','hz.liu@tuogo.com.cn','cerci.zhang@tuogo.com.cn']
         receive_address = ['beier.huang@tuogo.com.cn']
         title = "测试报告"
@@ -81,7 +82,7 @@ def test_run():
 
         content = mail.get_content()
         #需要发送邮件的话解除注释
-        mail.send_mail(send_address, send_password, receive_address, title, content)
+        #mail.send_mail(send_address, send_password, receive_address, title, content)
     except Exception as e:
         #raise e
         print(e)
